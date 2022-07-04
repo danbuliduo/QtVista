@@ -1,0 +1,42 @@
+<RCC>
+    <qresource prefix="/">
+        <file>MainWindow.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>res/fonts/AgencyFB.ttf</file>
+        <file>PageControl.qml</file>
+        <file>PageView.qml</file>
+        <file>PageEffect.qml</file>
+        <file>PageVistaCube.qml</file>
+        <file>res/fonts/DroidSansFallback.ttf</file>
+        <file>res/icons/icon-modelcube.svg</file>
+        <file>res/icons/icon-modelview.svg</file>
+        <file>res/icons/icon-component.svg</file>
+        <file>res/icons/icon-magiceffect.svg</file>
+        <file>res/icons/menu_vertical.svg</file>
+        <file>res/icons/icon-about.svg</file>
+        <file>res/icons/icon-menu_horizontal.svg</file>
+        <file>QmlExample/PageControl/ComponentDialog.qml</file>
+        <file>PageAbout.qml</file>
+        <file>res/icons/icon-back_arrows.svg</file>
+        <file>res/icons/os-linux.svg</file>
+        <file>res/icons/Android.svg</file>
+        <file>res/icons/AppleMAC.svg</file>
+        <file>res/icons/IOSAppStore.svg</file>
+        <file>res/pngs/logob.png</file>
+        <file>res/icons/img-colors.svg</file>
+        <file>res/icons/img-sun.svg</file>
+        <file>res/icons/logo-github.svg</file>
+        <file>res/icons/os-windows.svg</file>
+        <file>res/icons/logo-qt.svg</file>
+        <file>res/icons/os-android.svg</file>
+        <file>res/icons/os-webassembly .svg</file>
+        <file>res/pngs/BuiltwithQt-H.png</file>
+        <file>AppSettings/ApplicationINI.qml</file>
+        <file>AppSettings/qmldir</file>
+        <file>res/icons/logo-vista.svg</file>
+        <file>res/icons/img-dialog.svg</file>
+        <file>res/icons/icon-forward_arrows.svg</file>
+        <file>res/icons/img-loading.svg</file>
+        <file>res/icons/img-btn.svg</file>
+    </qresource>
+</RCC>

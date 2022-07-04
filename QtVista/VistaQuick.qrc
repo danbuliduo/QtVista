@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/">
+        <file>VistaQuick/Controls/qmldir</file>
+        <file>VistaQuick/Controls/VProgressBar.qml</file>
+        <file>VistaQuick/Controls/LoadingIndicator/qmldir</file>
+        <file>VistaQuick/Controls/LoadingIndicator/VAroundBlockIndicator.qml</file>
+        <file>VistaQuick/Controls/LoadingIndicator/VFlipBlockIndicator.qml</file>
+        <file>VistaQuick/Controls/LoadingIndicator/VPulseBlockIndicator.qml</file>
+        <file>VistaQuick/Controls/LoadingIndicator/VRowBlockIndicator.qml</file>
+        <file>VistaQuick/Views/qmldir</file>
+        <file>VistaQuick/Controls/VTabButton.qml</file>
+        <file>VistaQuick/Controls/VTabBar.qml</file>
+        <file>VistaQuick/Controls/VSlider.qml</file>
+        <file>VistaQuick/Controls/VCheckBox.qml</file>
+        <file>VistaQuick/Controls/VSwitch.qml</file>
+        <file>VistaQuick/Controls/LoadingIndicator/VDoughuntIndicator.qml</file>
+        <file>VistaQuick/Controls/Dialog/qmldir</file>
+        <file>VistaQuick/Controls/Dialog/VColorDialog.qml</file>
+        <file>VistaQuick/Controls/Button/VPushButton.qml</file>
+        <file>VistaQuick/Controls/Dialog/res/close.svg</file>
+        <file>VistaQuick/Controls/Dialog/VFontDialog.qml</file>
+        <file>VistaQuick/Controls/Dialog/VMessageDialog.qml</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,7 @@
+﻿module VistaQuick.Controls
+VCheckBox 1.0 VCheckBox.qml
+VProgressBar 1.0 VProgressBar.qml
+VSlider 1.0 VSlider.qml
+VSwitch 1.0 VSwitch.qml
+VTabBar 1.0 VTabBar.qml
+VTabButton 1.0 VTabButton.qml

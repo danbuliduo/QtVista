@@ -1,0 +1,4 @@
+﻿module VControls.Dialog
+VColorDialog 1.0 VColorDialog.qml
+VFontDialog 1.0 VFontDialog.qml
+VMessageDialog 1.0 VMessageDialog.qml

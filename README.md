@@ -1,0 +1,2 @@
+# QtVista
+QtVista是一组基于Material风格的QML组件库，能适用于多个平台，并且为Android封装了一些系统方法。

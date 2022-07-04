@@ -1,0 +1,6 @@
+﻿module VControls.LoadingIndicator
+VAroundBlockIndicator 1.0 VAroundBlockIndicator.qml
+VDoughuntIndicator 1.0 VDoughuntIndicator.qml
+VFlipBlockIndicator 1.0 VFlipBlockIndicator.qml
+VPulseBlockIndicator 1.0 VPulseBlockIndicator.qml
+VRowBlockIndicator 1.0 VRowBlockIndicator.qml
