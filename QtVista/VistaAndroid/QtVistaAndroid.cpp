@@ -1,32 +1,36 @@
 ﻿#include "QtVistaAndroid.h"
 #ifdef QTVA_SERVICEMANAGER
-#include "AndroidServiceManager.h"
+#include "AndroidSystemService.h"
 #endif
-
+#include "AndroidNotification.h"
 #include <QElapsedTimer>
+#include <QtCore/private/qandroidextras_p.h>
+
 QtVistaAndroid::QtVistaAndroid(QObject *parent) : QObject{parent}
 {
 
 }
 
-QObject* QtVistaAndroid::qmlInstance(QQmlEngine *engine, QJSEngine *scriptEngine){
-    Q_UNUSED(engine);
-    Q_UNUSED(scriptEngine);
-    QtVistaAndroid *qtVistaAndroid = new QtVistaAndroid();
-    return qtVistaAndroid;
-}
-
 void QtVistaAndroid::initializeVistaQml(){
     QElapsedTimer t;
     t.start();
-    QJniObject obj;
-    obj.callStaticMethod<void>(
-                "io/kanbuki/qt/android/vista/Debug",
-                "deBUG",
-                "()V");
-   qDebug()<<(double)t.nsecsElapsed()/(double)1000000<<"ms";
-    qmlRegisterSingletonType<QtVistaAndroid>("QtVista.Android", 1, 0 , "QtVistaAndroid",&QtVistaAndroid::qmlInstance);
+   /*
+   QJniObject javaNotification = QJniObject::fromString("debug");
+   QJniObject debug= QJniObject(
+               "io/kanbuki/qt/android/vista/AndroidNotification",
+               "(Landroid/app/Activity;Ljava/lang/String;I)V",
+               QtAndroidPrivate::activity(), javaNotification.object<jstring>(),6);
+    debug.callMethod<void>("initNotification",
+                           "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+                           QJniObject::fromString("icon").object<jstring>(),
+                           QJniObject::fromString("title").object<jstring>(),
+                           QJniObject::fromString("text").object<jstring>());
+    debug.callMethod<void>("setLargeIcon","(Ljava/lang/String;)V",
+                           QJniObject::fromString("icon").object<jstring>());
+    debug.callMethod<void>("startNotify","()V",7);*/
+    qDebug()<<(double)t.nsecsElapsed()/(double)1000000<<"ms";
+    qmlRegisterType<AndroidNotification>("VistaAndroid.Cores", 1, 0, "AndroidNotification");
 #ifdef QTVA_SERVICEMANAGER
-    qmlRegisterSingletonType<AndroidServiceManager>("QtVista.Android", 1, 0, "AndroidServiceManager", &AndroidServiceManager::qmlInstance);
+    qmlRegisterSingletonType<AndroidSystemService>("VistaAndroid.Cores", 1, 0, "AndroidSystemService", &AndroidSystemService::qmlInstance);
 #endif
 }

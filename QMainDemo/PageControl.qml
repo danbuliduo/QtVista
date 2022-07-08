@@ -10,19 +10,18 @@ import "qrc:/QmlExample/PageControl/"
 Page{
     ListModel{
         id: listModel
-        ListElement{title: "VistaQuick.Controls"; iconUrl: "qrc:/res/icons/img-dialog.svg"}
-        ListElement{title: "Controls.Button"; iconUrl: "qrc:/res/icons/img-dialog.svg"}
-        ListElement{title: "Controls.Dialog"; iconUrl: "qrc:/res/icons/img-dialog.svg"}
-        ListElement{title: "Controls.LoadingIndicator"; iconUrl: "qrc:/res/icons/img-loading.svg"}
-        ListElement{title: "Controls.Button"; iconUrl: "qrc:/res/icons/img-btn.svg"}
-        ListElement{title: "Controls.Button"; iconUrl: "qrc:/res/icons/img-dialog.svg"}
-        ListElement{title: "Controls.Button"; iconUrl: "qrc:/res/icons/img-dialog.svg"}
-        ListElement{title: "Controls.Button"; iconUrl: "qrc:/res/icons/img-dialog.svg"}
-        ListElement{title: "Controls.Button"; iconUrl: "qrc:/res/icons/img-dialog.svg"}
-        ListElement{title: "Controls.Button"; iconUrl: "qrc:/res/icons/img-dialog.svg"}
-        ListElement{title: "Controls.Button"; iconUrl: "qrc:/res/icons/img-dialog.svg"}
-        ListElement{title: "Controls.Button"; iconUrl: "qrc:/res/icons/img-dialog.svg"}
-        ListElement{title: "Controls.Button"; iconUrl: "qrc:/res/icons/img-dialog.svg"}
+        ListElement{title: "Controls.Button"; iconUrl: "qrc:/res/icons/icon-btn.svg"}
+        ListElement{title: "Controls.Dialog"; iconUrl: "qrc:/res/icons/icon-dialog.svg"}
+        ListElement{title: "Controls.Lable"; iconUrl: "qrc:/res/icons/icon-lable.svg"}
+        ListElement{title: "Controls.LoadingIndicator"; iconUrl: "qrc:/res/icons/icon-loading.svg"}
+        ListElement{title: "Controls.Popup"; iconUrl: "qrc:/res/icons/icon-popup.svg"}
+        ListElement{title: "Controls.Button"; iconUrl: "qrc:/res/icons/icon-loading.svg"}
+        ListElement{title: "Controls.Button"; iconUrl: "qrc:/res/icons/icon-loading.svg"}
+        ListElement{title: "Controls.Button"; iconUrl: "qrc:/res/icons/icon-loading.svg"}
+        ListElement{title: "Controls.Button"; iconUrl: "qrc:/res/icons/icon-loading.svg"}
+        ListElement{title: "Controls.Button"; iconUrl: "qrc:/res/icons/icon-loading.svg"}
+        ListElement{title: "Controls.Button"; iconUrl: "qrc:/res/icons/icon-loading.svg"}
+        ListElement{title: "Controls.Button"; iconUrl: "qrc:/res/icons/icon-loading.svg"}
     }
     ListView{
         id:listView
@@ -34,8 +33,10 @@ Page{
             width: listView.width
             height: 100
             Row{
+                anchors.top: parent.top
                 anchors.centerIn: parent
                 spacing: parent.width*0.05
+                height: 100
                 Image{
                     anchors.verticalCenter: parent.verticalCenter
                     sourceSize: Qt.size(64, 64)
@@ -61,12 +62,13 @@ Page{
                 }
             }
         }
+
         delegate: ItemDelegate{
             width: listView.width
             height: 64
             text: title
             icon.source: iconUrl
-            icon.color: "transparent"
+            icon.color: Material.accentColor
             icon.width: 36
             icon.height: 36
             Rectangle{
@@ -84,15 +86,34 @@ Page{
             }
             onClicked: {
                   switch(index){
-                  case 2: application.stackViewPUSH(component_dialog)
+                  case 0: application.stackViewPUSH(component_button) ; break
+                  case 1: application.stackViewPUSH(component_dialog) ; break
+                  case 2: application.stackViewPUSH(component_lable) ; break
+                  case 3: application.stackViewPUSH(component_loadingIndicator) ; break
+                  case 4: application.stackViewPUSH(component_popup) ; break
                   }
             }
         }
     }
-
+    Component{
+        id: component_button
+        ComponentButton{}
+    }
     Component{
         id: component_dialog
         ComponentDialog{}
+    }
+    Component{
+        id: component_lable
+        ComponentLable{}
+    }
+    Component{
+        id: component_loadingIndicator
+        ComponentLoadingIndicator{}
+    }
+    Component{
+        id: component_popup
+        ComponentPopup{}
     }
 }
 /*    Flow{

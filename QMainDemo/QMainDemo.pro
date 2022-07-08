@@ -4,6 +4,8 @@ SOURCES += Main.cpp
 
 RESOURCES += qml.qrc
 
+include(../QtVista/VistaQuick.pri)
+
 android{
    DISTFILES += Android/AndroidManifest.xml
    ANDROID_PACKAGE_SOURCE_DIR = $$PWD/Android
@@ -17,6 +19,4 @@ macx{
 unix:!macx{
     RC_ICONS = $$PWD/res/LOGO.ico
 }
-
-include(../QtVista/QtVista.pri)
 

@@ -113,7 +113,7 @@ Page{
                         text: "GitHub"
                         icon.source: "qrc:/res/icons/logo-github.svg"
                         icon.color: "transparent"
-                        onClicked: Qt.openUrlExternally("https://github.com/DMing-CN")
+                        onClicked: Qt.openUrlExternally("https://github.com/DMing-CN/QtVista")
                    }
                    Rectangle{
                         width: page.width
@@ -149,26 +149,4 @@ Page{
             text: Qt.formatDateTime(new Date(), "© yyyy ")+Application.organization+" D.Ming All Right Reserved."
         }
     }
-
-
-   /*        Row{
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.top: parent.top
-            anchors.topMargin: 400
-            spacing: 32
-            Repeater{
-                model: ListModel{
-                    ListElement{ iconUrl: "qrc:/res/icons/Android.svg"}
-                    ListElement {iconUrl : "qrc:/res/icons/Windows.svg"}
-                    ListElement{ iconUrl: "qrc:/res/icons/Linux.svg"}
-                    ListElement{ iconUrl: "qrc:/res/icons/AppleMAC.svg"}
-                    ListElement{ iconUrl: "qrc:/res/icons/IOSAppStore.svg"}
-                }
-                Image{
-                    width:48
-                    height: 48
-                    source: iconUrl
-                }
-            }
-        }*/
 }

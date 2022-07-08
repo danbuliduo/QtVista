@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>VistaAndroid/Controls/VAppFullscreenWindow.qml</file>
+        <file>VistaAndroid/Controls/qmldir</file>
+    </qresource>
+</RCC>

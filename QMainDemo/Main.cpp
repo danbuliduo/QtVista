@@ -8,12 +8,13 @@
 
 int main(int argc, char *argv[])
 {
-
+    qputenv("QSG_RHI_BACKEND", "opengl");
     QApplication app(argc, argv);
     app.setWindowIcon(QIcon("qrc:/res/icons/logo-v.ico"));
     app.setApplicationVersion("1.0.0-Alpha");
-    app.setApplicationName("QtVista");
+    app.setApplicationName("QtVistaQuick");
     app.setOrganizationName("HUBEI MINZU UNIVERSITY");
+
 
     int fontid = QFontDatabase::addApplicationFont(QStringLiteral(":/res/fonts/DroidSansFallback.ttf"));
     if(fontid != -1){
@@ -30,7 +31,7 @@ int main(int argc, char *argv[])
     const QUrl url(QStringLiteral("qrc:/MainWindow.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
         &app, [url](QObject *obj, const QUrl &objUrl) {
-        if (!obj && url == objUrl) {QCoreApplication::exit(-1);}
+        if (!obj && url == objUrl){ QCoreApplication::exit(-1);}
     }, Qt::QueuedConnection);
     engine.load(url);
 

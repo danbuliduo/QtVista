@@ -30,13 +30,19 @@
         <file>res/icons/logo-qt.svg</file>
         <file>res/icons/os-android.svg</file>
         <file>res/icons/os-webassembly .svg</file>
-        <file>res/pngs/BuiltwithQt-H.png</file>
         <file>AppSettings/ApplicationINI.qml</file>
         <file>AppSettings/qmldir</file>
         <file>res/icons/logo-vista.svg</file>
-        <file>res/icons/img-dialog.svg</file>
         <file>res/icons/icon-forward_arrows.svg</file>
-        <file>res/icons/img-loading.svg</file>
-        <file>res/icons/img-btn.svg</file>
+        <file>res/icons/icon-loading.svg</file>
+        <file>res/icons/icon-dialog.svg</file>
+        <file>res/icons/icon-btn.svg</file>
+        <file>res/icons/icon-lable.svg</file>
+        <file>res/icons/icon-popup.svg</file>
+        <file>QmlExample/PageControl/ComponentButton.qml</file>
+        <file>QmlExample/PageControl/ComponentLable.qml</file>
+        <file>QmlExample/PageControl/ComponentLoadingIndicator.qml</file>
+        <file>QmlExample/PageControl/ComponentPopup.qml</file>
+        <file>res/pngs/buildWithQt.png</file>
     </qresource>
 </RCC>

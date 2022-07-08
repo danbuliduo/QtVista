@@ -1,6 +1,9 @@
 ﻿import QtQuick
 import QtQuick.Controls
 
+import VistaQuick.Controls.Dialog
+import Qt.labs.platform
+
 Page{
     header: ToolBar{
         contentHeight: menuBtn.implicitHeight
@@ -23,6 +26,32 @@ Page{
             font.bold: true
             text: "Controls.Dialog"
         }
+    }
+    Row{
+    Button{
+        onClicked: colorDialog.open()
+    }
+    Button{
+        onClicked: m.open()
+    }
+    Button{
+        onClicked:f.open()
+    }
+    }
+
+    VColorDialog{
+        id:colorDialog
+        onAccepted: {
+            console.log(currentColor)
+        }
+    }
+    VFontDialog{
+        id:f
+    }
+
+
+    VMessageDialog{
+        id:m
     }
 
 }

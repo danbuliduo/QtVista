@@ -12,7 +12,7 @@ ApplicationWindow {
     minimumWidth: 512
     minimumHeight: 320
     Material.theme: ApplicationINI.themeMode
-    Material.accent: ApplicationINI.themeColor
+    Material.accent: Material.color(ApplicationINI.themeColor)
     width: Qt.platform.os === "android" || Qt.platform.os === "ios" ?
            Screen.desktopAvailableWidth : Screen.desktopAvailableWidth*0.5
     height: Qt.platform.os === "android" || Qt.platform.os === "ios" ?
@@ -29,10 +29,10 @@ ApplicationWindow {
     }
 
     header: ToolBar{
-        contentHeight: left_menuBtn.implicitHeight
+        contentHeight: menuBtn.implicitHeight
         Material.primary: Material.accent
         ToolButton{
-            id:left_menuBtn
+            id:menuBtn
             anchors.left: parent.left
             anchors.verticalCenter: parent.verticalCenter
             icon.source: "qrc:/res/icons/icon-menu_horizontal.svg"
@@ -49,7 +49,6 @@ ApplicationWindow {
             text: "QtVista For "+listmodel.get(tabBar.currentIndex).titletext
         }
         ToolButton{
-            id:right_menuBtn
             anchors.right: parent.right
             anchors.verticalCenter: parent.verticalCenter
             icon.source: "qrc:/res/icons/icon-about.svg"
@@ -57,7 +56,7 @@ ApplicationWindow {
             icon.height: 26
             icon.width: 26
             onClicked: {
-                application.stackViewPUSH(component2)
+                application.stackViewPUSH(component_pageabout)
             }
         }
     }
@@ -81,7 +80,7 @@ ApplicationWindow {
         id: stackView
         anchors.fill: parent
         Component{
-            id:component1
+            id:component_default
             SwipeView{
                 currentIndex: tabBar.currentIndex
                 interactive: false
@@ -92,7 +91,7 @@ ApplicationWindow {
             }
         }
         Component{
-            id:component2
+            id:component_pageabout
             PageAbout{}
         }
     }
@@ -136,7 +135,7 @@ ApplicationWindow {
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.bottom: parent.bottom
                 anchors.bottomMargin: pane.height*0.15
-                source: "qrc:/res/pngs/BuiltwithQt-H.png"
+                source: "qrc:/res/pngs/buildWithQt.png"
                 smooth: true
                 fillMode: Image.PreserveAspectFit
                 height: pane.height*0.3
@@ -199,11 +198,10 @@ ApplicationWindow {
                      id: themeColorComboBox
                      Material.foreground: Material.accentColor
                      anchors.horizontalCenter: parent.horizontalCenter
-                     currentIndex: ApplicationINI.themeColorID
+                     currentIndex: ApplicationINI.themeColor
                      width: pane.width*0.8
                      font.bold: true
                      model: ListModel {
-                         ListElement { name: "Vista-Cyan"}
                          ListElement { name: "Material-Red" }
                          ListElement { name: "Material-Pink" }
                          ListElement { name: "Material-Purple" }
@@ -232,12 +230,11 @@ ApplicationWindow {
                          Rectangle {
                              z: -1
                              anchors.fill: parent
-                             color: index ===0 ? "#00CED1" : Material.color(index-1)
+                             color:  Material.color(index)
                          }
                          onClicked: {
-                             ApplicationINI.themeColor = index ===0 ?
-                                         "#00CED1" : Material.color(index-1)
-                             ApplicationINI.themeColorID = index
+                             ApplicationINI.themeColor = index //Material.color(index)
+                             //ApplicationINI.themeColorID = index
                          }
                      }
                 }
@@ -245,7 +242,7 @@ ApplicationWindow {
         }
     }
     Component.onCompleted: {
-         stackView.push(component1)
+         stackView.push(component_default)
     }
     function stackViewPOP(){
         stackView.pop()
