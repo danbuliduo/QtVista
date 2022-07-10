@@ -113,7 +113,7 @@ Page{
                         text: "GitHub"
                         icon.source: "qrc:/res/icons/logo-github.svg"
                         icon.color: "transparent"
-                        onClicked: Qt.openUrlExternally("https://github.com/DMing-CN/QtVista")
+                        onClicked: Qt.openUrlExternally("https://github.com/Q-Teng/QtVista")
                    }
                    Rectangle{
                         width: page.width
