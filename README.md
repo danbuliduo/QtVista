@@ -2,7 +2,7 @@
 
 QtVista是一组基于Material风格的QML组件集与工具集，QtVista的工具集为Android适配了一些系统方法。当然基于Material风格的组件可以适用于多个平台
 这个项目来自我使用QT开发Android时发现QT在移动端许多功能尚不完善，还需要面临非常多的问题，故此专门为QT For Android编写了一套额外的工具类和一些UI小组件
-用来方便Android开发，QtVista项目为此而生!
+用来进行Android开发，QtVista项目为此而生!
 
 ## 运行实例
 
